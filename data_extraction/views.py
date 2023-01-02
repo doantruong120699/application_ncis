@@ -14,7 +14,8 @@ def ncis(request):
                     list.append({'date':'not exist','ncis':dt})
                 else:
                     list.append(response)
-            except:
+            except Exception as e:
+                print(e)
                 continue
         context = {'records':list}
         return render(request,'index.html',context)
